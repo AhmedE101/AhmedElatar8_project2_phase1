@@ -1,56 +1,60 @@
 import React from "react";
-import CourseCard from "./Card";
-import "./CardListstyle.module.css";
+import CourseCard from "./Card.js";
+import style from "./CardListstyle.module.css";
 
 
-function CardList() {
+const CardList = () => {
+
+    let courses = [
+        {
+            id: 1,
+            link: "https://www.udemy.com/course/pythonforbeginners/",
+            title: "Learn Python: The Complete Python Programming Course",
+            author: "Avinash Jain,The Codex",
+            image: "https://img-c.udemycdn.com/course/240x135/394676_ce3d_5.jpg",
+            price: "679.99",
+            rating: 4.4,
+            people: "2,948",
+        },
+        {
+            id: 2,
+            link: "https://www.udemy.com/course/learning-python-for-data-analysis-and-visualization/",
+            title: "Learning Python for Data Analysis and Visualization",
+            author: "Jose Portilla",
+            image: "https://img-c.udemycdn.com/course/240x135/396876_cc92_7.jpg",
+            price: "1,599.99",
+            rating: 4.4,
+            people: "17,999",
+        },
+        {
+            id: 3,
+            link: "https://www.udemy.com/course/python-for-beginners-learn-programming-from-scratch/",
+            title: "Python for Beginners - Learn Programming from scratch",
+            author: "Edwin Diaz, Coding FAcutly Solutaions",
+            image: "https://img-c.udemycdn.com/course/240x135/405878_e5a0_3.jpg",
+            price: "679.99",
+            rating: 4.4,
+            people: "1,781",
+        },
+        {
+            id: 4,
+            link: "https://www.udemy.com/course/python-beyond-the-basics-object-oriented-programming/",
+            title: "Python Beyond the Basics - Object-Oriented Programming",
+            author: "Infinite Skills",
+            image: "https://img-c.udemycdn.com/course/480x270/449532_2aa9_7.jpg",
+            price: "519.99",
+            rating: 4.4,
+            people: "2,930",
+        },
+    ];
+
+
     return (
-        <div className="Cardlist">
-            <CourseCard
-                courseTitle={"Microsoft Excel - Excel from Beginner to Advanced"}
-                imgSrc={"https://img-a.udemycdn.com/course/240x135/793796_0e89.jpg"}
-                instructor={"Kyle Pew, Office Newb LLC"}
-                rating={4.6}
-                noOfStudents={"(166,042)"}
-                price={"$864"}
-            />
-            <CourseCard
-                courseTitle={"The Complete Digital Marketing Course - 12 Courses in 1"}
-                imgSrc={"https://img-a.udemycdn.com/course/240x135/914296_3670_8.jpg"}
-                instructor={"Rob Percival, Daragh Walsh, Codestars by Rob Percival"}
-                rating={4.4}
-                noOfStudents={"(166,042)"}
-                price={"$864"}
-            />
-            <CourseCard
-                courseTitle={"iOS 13 & Swift 5 - The Complete iOS App Development Bootcamp"}
-                imgSrc={"https://img-a.udemycdn.com/course/240x135/1778502_f4b9_11.jpg"}
-                instructor={"Dr. Anglea Yu"}
-                rating={4.4}
-                noOfStudents={"(166,042)"}
-                price={"$864"}
-            />
-            <CourseCard
-                courseTitle={"Cisco CCNA 200-301 – The Complete Guide to Getting Certified"}
-                imgSrc={"https://img-a.udemycdn.com/course/240x135/1203374_6d6f_3.jpg"}
-                instructor={"Neil Anderson"}
-                rating={4.4}
-                noOfStudents={"(166,042)"}
-                price={"$864"}
-            />
-            <CourseCard
-                courseTitle={"Advanced CSS and Sass: Flexbox, Grid, Animations and More!"}
-                imgSrc={"https://img-a.udemycdn.com/course/240x135/1026604_790b_2.jpg"}
-                instructor={"Jonas Schmedtmann"}
-                rating={4.4}
-                noOfStudents={"(166,042)"}
-                price={"$864"}
-            />
-
-
-
-
-        </div>
+        <ul className={style.cardlist}>
+            {courses.map((course) => {
+                return <CourseCard key={course.id} course={course}></CourseCard>
+            })}
+        </ul>
     );
-}
+};
 export default CardList;

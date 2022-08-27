@@ -1,13 +1,6 @@
-import React from 'react';
-import './App.css';
-import Content from './components/CourseContent';
-
+import Content from "./components/CourseContent";
 function App() {
-  return (
-    <div className="App">
-      <Content />
-    </div>
-  );
+  return <Content></Content>
 }
 
 export default App;
